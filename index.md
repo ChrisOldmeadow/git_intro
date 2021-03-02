@@ -16,24 +16,47 @@ date: "2020/08/17"
 
 ### Tracks changes to files and directories
 
-### A Directed Acyclic Graph
 
-### Commits and branches
+## Key concepts
 
-![Caption](basic-branching-1.png)
+* repository
+* Working directory
+* Staging files
+* Commits 
+* Branches
+* HEAD 
 
-### Merging branches
+### Repository
 
-![Caption](basic-merging-2.png)
+* contains all the files that are being tracked (as well as the necessary
+  database to facilitate this)
+* can be local or remote (eg on GitHub)
 
-## Summary of key concepts
-- Some key concepts:
+* Key command: git init
+* this initialises a local repository
 
-  - staging
-  - HEAD
-  - hash
+### Working Directors
 
-##  some simple commands
+* contains all the files and folders for your project
+* you may want to track some or all of these files 
+* they are not tracked until they are:
+    * Staged
+    * Committed
+
+### Staging files
+
+
+### Commit changes
+
+
+### Branches
+These are pointers to specific commit histories
+
+### HEAD
+
+This is a pointer to the current view of the repository
+
+##   A simple example
 
 ### Creating a local repository
 <div style="color: #42affa">
@@ -51,7 +74,7 @@ I have added the file *example.R*
 y <- rnorm(100)
 hist(y)
 ```
-Now lets view the status of the repo
+### Now lets view the status of the repo
 
 <div style="color: #42affa">
 ```console
@@ -67,6 +90,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 </div>
+
 
 ### Add a file/s to the staging area
 <div style="color: #42affa">
