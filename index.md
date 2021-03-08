@@ -18,11 +18,6 @@ date: "2020/08/17"
 
 
 
-### Contents of directory represented by Trees  (and blobs)
-
-* Tree = folder
-* Blob = file
-
 ### Git represents history/changes to trees through a DAG
 
 ![A Directed Acyclic Graph](basic-merging-2.png)
@@ -31,13 +26,6 @@ date: "2020/08/17"
 
 
 ## Key concepts
-
-* Repository
-* Working directory
-* Staging files
-* Commits 
-* Branches
-* HEAD 
 
 ### Repository
 
@@ -51,7 +39,7 @@ date: "2020/08/17"
 ### Working Directors
 
 * contains all the files and folders for your project
-* you may want to track some or all of these files 
+* you may want to track some or all of these files
 * they are not tracked until they are:
     * Staged
     * Committed
@@ -67,7 +55,7 @@ Rather than committing everything, we specify which files to commit.
 * A snapshot of the changes you have made that you want to track
 * Should have a detailed message explaining what was different
 
-* command: git commit -m "My short message" 
+* command: git commit -m "My short message"
 
 
 ### Branches
@@ -347,7 +335,7 @@ summary(lm(sqrt(y) ~ x ))
 ```console
 > git add example.R
 > git commit m "Transformed the response"
-> git log --graph --abbrev-commit --decorate --all 
+> git log --graph --abbrev-commit --decorate --all
 * commit 530e65a (HEAD -> master)
 | Author: Chris Oldmeadow <chris.oldmeadow@protonmail.com>
 | Date:   Sun Feb 21 14:20:06 2021 +1100
@@ -428,8 +416,8 @@ will get a *merge conflict*, manually edit the file to fix the conflicts
 
 ## Remote repositories
 
-### Gittea
-We have a private Gittea server at [https://git.hmri.org.au](https://git.hmri.org.au)
+### Gitea
+We have a private Gitea server at [https://git.hmri.org.au](https://git.hmri.org.au)
 <div style="color: #42affa">
 ```sh
 $ git remote add origin https://git.hmri.org.au/username/repo
