@@ -12,14 +12,27 @@ date: "2020/08/17"
 
 
 ## What is <i class="fas fa-git"></i>
-![Caption](https://imgs.xkcd.com/comics/git.png)
+![Who has done this before?](https://imgs.xkcd.com/comics/git.png)
 
 ### Tracks changes to files and directories
 
 
+
+### Contents of directory represented by Trees  (and blobs)
+
+* Tree = folder
+* Blob = file
+
+### Git represents history/changes to trees through a DAG
+
+![A Directed Acyclic Graph](basic-merging-2.png)
+
+[]()
+
+
 ## Key concepts
 
-* repository
+* Repository
 * Working directory
 * Staging files
 * Commits 
@@ -32,7 +45,7 @@ date: "2020/08/17"
   database to facilitate this)
 * can be local or remote (eg on GitHub)
 
-* Key command: git init
+* command: git init
 * this initialises a local repository
 
 ### Working Directors
@@ -45,8 +58,16 @@ date: "2020/08/17"
 
 ### Staging files
 
+Rather than committing everything, we specify which files to commit.
+
+* command: git add filename
 
 ### Commit changes
+
+* A snapshot of the changes you have made that you want to track
+* Should have a detailed message explaining what was different
+
+* command: git commit -m "My short message" 
 
 
 ### Branches
@@ -54,7 +75,8 @@ These are pointers to specific commit histories
 
 ### HEAD
 
-This is a pointer to the current view of the repository
+This is a pointer to the current view of the repository (the last snapshop
+excluding staged changes)
 
 ##   A simple example
 
@@ -410,7 +432,7 @@ will get a *merge conflict*, manually edit the file to fix the conflicts
 We have a private Gittea server at [https://git.hmri.org.au](https://git.hmri.org.au)
 <div style="color: #42affa">
 ```sh
-$ git remote add origin https://git.hmri.org,au/username/repo
+$ git remote add origin https://git.hmri.org.au/username/repo
 ```
 </div>
 
@@ -430,7 +452,7 @@ $ git push origin master
 
 <div style="color: #42affa">
 ```sh
-$ git push origin master
+$ git pull origin master
 ```
 </div>
 

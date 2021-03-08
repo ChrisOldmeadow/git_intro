@@ -106,42 +106,85 @@
 <section id="what-is" class="title-slide slide level2">
 <h2>What is <i class="fas fa-git"></i></h2>
 <figure>
-<img data-src="https://imgs.xkcd.com/comics/git.png" alt="Caption" /><figcaption aria-hidden="true">Caption</figcaption>
+<img data-src="https://imgs.xkcd.com/comics/git.png" alt="Who has done this before?" /><figcaption aria-hidden="true">Who has done this before?</figcaption>
 </figure>
 </section>
 <section id="tracks-changes-to-files-and-directories" class="slide level3">
 <h3>Tracks changes to files and directories</h3>
 </section>
-<section id="a-directed-acyclic-graph" class="slide level3">
-<h3>A Directed Acyclic Graph</h3>
+<section id="contents-of-directory-represented-by-trees-and-blobs" class="slide level3">
+<h3>Contents of directory represented by Trees (and blobs)</h3>
+<ul>
+<li>Tree = folder</li>
+<li>Blob = file</li>
+</ul>
 </section>
-<section id="commits-and-branches" class="slide level3">
-<h3>Commits and branches</h3>
+<section id="git-represents-historychanges-to-trees-through-a-dag" class="slide level3">
+<h3>Git represents history/changes to trees through a DAG</h3>
 <figure>
-<img data-src="basic-branching-1.png" alt="Caption" /><figcaption aria-hidden="true">Caption</figcaption>
+<img data-src="basic-merging-2.png" alt="A Directed Acyclic Graph" /><figcaption aria-hidden="true">A Directed Acyclic Graph</figcaption>
 </figure>
-</section>
-<section id="merging-branches" class="slide level3">
-<h3>Merging branches</h3>
-<figure>
-<img data-src="basic-merging-2.png" alt="Caption" /><figcaption aria-hidden="true">Caption</figcaption>
-</figure>
+<p><a href=""></a></p>
 </section></section>
-<section id="summary-of-key-concepts" class="title-slide slide level2">
-<h2>Summary of key concepts</h2>
+<section>
+<section id="key-concepts" class="title-slide slide level2">
+<h2>Key concepts</h2>
 <ul>
-<li><p>Some key concepts:</p>
-<ul>
-<li>staging</li>
+<li>Repository</li>
+<li>Working directory</li>
+<li>Staging files</li>
+<li>Commits</li>
+<li>Branches</li>
 <li>HEAD</li>
-<li>hash</li>
+</ul>
+</section>
+<section id="repository" class="slide level3">
+<h3>Repository</h3>
+<ul>
+<li><p>contains all the files that are being tracked (as well as the necessary database to facilitate this)</p></li>
+<li><p>can be local or remote (eg on GitHub)</p></li>
+<li><p>command: git init</p></li>
+<li><p>this initialises a local repository</p></li>
+</ul>
+</section>
+<section id="working-directors" class="slide level3">
+<h3>Working Directors</h3>
+<ul>
+<li>contains all the files and folders for your project</li>
+<li>you may want to track some or all of these files</li>
+<li>they are not tracked until they are:
+<ul>
+<li>Staged</li>
+<li>Committed</li>
 </ul></li>
 </ul>
 </section>
-
+<section id="staging-files" class="slide level3">
+<h3>Staging files</h3>
+<p>Rather than committing everything, we specify which files to commit.</p>
+<ul>
+<li>command: git add filename</li>
+</ul>
+</section>
+<section id="commit-changes" class="slide level3">
+<h3>Commit changes</h3>
+<ul>
+<li><p>A snapshot of the changes you have made that you want to track</p></li>
+<li><p>Should have a detailed message explaining what was different</p></li>
+<li><p>command: git commit -m “My short message”</p></li>
+</ul>
+</section>
+<section id="branches" class="slide level3">
+<h3>Branches</h3>
+<p>These are pointers to specific commit histories</p>
+</section>
+<section id="head" class="slide level3">
+<h3>HEAD</h3>
+<p>This is a pointer to the current view of the repository (the last snapshop excluding staged changes)</p>
+</section></section>
 <section>
-<section id="some-simple-commands" class="title-slide slide level2">
-<h2>some simple commands</h2>
+<section id="a-simple-example" class="title-slide slide level2">
+<h2>A simple example</h2>
 
 </section>
 <section id="creating-a-local-repository" class="slide level3">
@@ -156,7 +199,9 @@ Initialized empty Git repository in /home/chris/git-test/.git/</code></pre>
 <p>I have added the file <em>example.R</em></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(y)</span></code></pre></div>
-<p>Now lets view the status of the repo</p>
+</section>
+<section id="now-lets-view-the-status-of-the-repo" class="slide level3">
+<h3>Now lets view the status of the repo</h3>
 <div style="color: #42affa">
 <pre class="console"><code>❯ git status
 On branch master
@@ -461,7 +506,7 @@ Changes to be committed:
 <h3>Gittea</h3>
 We have a private Gittea server at <a href="https://git.hmri.org.au">https://git.hmri.org.au</a>
 <div style="color: #42affa">
-<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote add origin https://git.hmri.org,au/username/repo</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote add origin https://git.hmri.org.au/username/repo</span></code></pre></div>
 </div>
 </section>
 <section id="pushing-to-an-existing-remote-repo" class="slide level3">
@@ -473,7 +518,7 @@ We have a private Gittea server at <a href="https://git.hmri.org.au">https://git
 <section id="pulling-changes-from-a-repo" class="slide level3">
 <h3>Pulling changes from a repo</h3>
 <div style="color: #42affa">
-<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push origin master</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git pull origin master</span></code></pre></div>
 </div>
 </section>
 <section id="cloning-a-repo" class="slide level3">
