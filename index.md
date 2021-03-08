@@ -6,7 +6,8 @@ date: "2020/08/17"
 ---
 ## Why <i class="fas fa-git"></i>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+rel="stylesheet"  type='text/css' >
 
 ![phd](phd101212s.gif){style="border: 0; background: none; height: 600px; vertical-align: middle" }
 
